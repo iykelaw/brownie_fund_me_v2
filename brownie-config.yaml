@@ -1,0 +1,27 @@
+dotenv: .env
+
+networks:
+  kovan:
+    eth_usd_price_feed: "0x9326BFA02ADD2366b30bacB125260Af641031331"
+    verify: True
+
+  mainnet-fork-dev:
+    eth_usd_price_feed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    verify: False
+
+  development:
+    verify: False
+
+  ganache-local:
+    verify: False
+
+wallet:
+  from_key: ${PRIVATE_KEY}
+
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.3.1
+
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.3.1"
